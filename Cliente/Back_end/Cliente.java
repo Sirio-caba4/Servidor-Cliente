@@ -4,7 +4,7 @@ import java.io.*;
 import java.net.*;
 
 public class Cliente {
-    private final int PUERTO = 1234;
+    private final int PUERTO = 5555;
     private String hostIP;
     private Socket cs;
     private DataOutputStream salidaServidor;
@@ -37,7 +37,7 @@ public class Cliente {
                 String mensajeServidor;
                 while ((mensajeServidor = entradaServidor.readLine()) != null) {
                     if (listener != null) {
-                        listener.onMensajeRecibido("Servidor: " + mensajeServidor);
+                        listener.onMensajeRecibido(mensajeServidor);
                     }
                 }
             } catch (IOException e) {
